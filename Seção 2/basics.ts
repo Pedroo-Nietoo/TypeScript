@@ -10,8 +10,8 @@ function add(n1: number, n2: number, showResult: boolean, phrase: string) {
     }
 }
 
-const number1: number = 5; // -> Annotation
-const number2 = 2.8; // -> Inference
+const number1: number = 5; //* -> Annotation
+const number2 = 2.8; //* -> Inference
 const printResult: boolean = true;
 const resultPhrase: string = 'Result is: '
 

@@ -1,4 +1,4 @@
-//type guard -> checa se o método existe antes de tentar utilizá-lo, ou se pode-se fazer algo com ele antes de utilizá-lo
+//? type guard -> checa se o método existe antes de tentar utilizá-lo, ou se pode-se fazer algo com ele antes de utilizá-lo
 
 type Admin = {
     name: string;
@@ -12,7 +12,7 @@ type Employee = {
 
 // interface ElevatedEmployee extends Employee, Admin {}
 
-type ElevatedEmployee = Employee & Admin; //Intersection types
+type ElevatedEmployee = Employee & Admin; //* Intersection types
 
 const e1: ElevatedEmployee = {
     name: 'Pedro',
@@ -24,12 +24,12 @@ const e1: ElevatedEmployee = {
 type Combinable = string | number;
 type Numeric = number | boolean;
 
-type Universal = Combinable & Numeric; //Intersection types
+type Universal = Combinable & Numeric; //* Intersection types
 
-function add(a: number, b: number): number; //function overload
-function add(a: string, b: string): string; //function overload
+function add(a: number, b: number): number; //* function overload
+function add(a: string, b: string): string; //* function overload
 function add(a: Combinable, b: Combinable) {
-    if (typeof a === 'string' || typeof b === 'string') { //type guard
+    if (typeof a === 'string' || typeof b === 'string') { //* type guard
         return a.toString() + b.toString();
     }
     return a + b;
@@ -45,12 +45,12 @@ const fetchedUserData = {
     job: { title: 'Back-End Dev', description: 'My own job' }
 };
 
-console.log(fetchedUserData?.job?.title); //Optional chaining
+console.log(fetchedUserData?.job?.title); //* Optional chaining
 
 
 const userInput = '';
 
-const storedData = userInput ?? 'DEFAULT'; //Nullish coalescing
+const storedData = userInput ?? 'DEFAULT'; //* Nullish coalescing
 console.log(storedData);
 
 //// type UnknownEmployee = Employee | Admin;
@@ -58,7 +58,7 @@ console.log(storedData);
 // function printEmployeeInfo(emp: UnknownEmployee) {
 //     console.log('Name: ' + emp.name);
 
-//     if ('privileges' in emp) { //type guard
+//     if ('privileges' in emp) { //* type guard
 //         console.log('Privileges: ' + emp.privileges);
 //     }
 
@@ -104,12 +104,12 @@ console.log(storedData);
 // //Discriminated union -> Padrão utilizado ao trabalhar com union types que torna mais fácil implementar type guards
 
 // interface Bird {
-//     type: 'bird' //discriminated union
+//     type: 'bird' //* discriminated union
 //     flyingSpeed: number;
 // }
 
 // interface Horse {
-//     type: 'horse' //discriminated union
+//     type: 'horse' //* discriminated union
 //     runningSpeed: number;
 // }
 
@@ -131,14 +131,14 @@ console.log(storedData);
 // moveAnimal({ type: 'bird', flyingSpeed: 10 });
 
 // // const userInputElement = <HTMLInputElement>document.getElementById('user-input')!;
-// const userInputElement = document.getElementById('user-input') as HTMLInputElement; //type casting
+// const userInputElement = document.getElementById('user-input') as HTMLInputElement; //* type casting
 
 // if (userInputElement) {
 //     (userInputElement as HTMLInputElement).value = 'Hi there'
 // }
 
 // interface ErrorContainer { //{ email: 'Not a valid e-mail, username: 'Must start with a character! }
-//     [prop: string]: string //index properties
+//     [prop: string]: string //* index properties
 // }
 
 // const errorBag: ErrorContainer = {
@@ -146,4 +146,4 @@ console.log(storedData);
 //     username: 'Must start with a capital character!'
 // };
 
-// //function overloads -> definir multiplas assinaturas de funções para uma mesma função
+// //*function overloads -> definir multiplas assinaturas de funções para uma mesma função

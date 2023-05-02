@@ -55,7 +55,7 @@ class AccountingDepartment extends Department {
         this.lastReport = reports[0];
     }
 
-    static getInstance() { //Singleton
+    static getInstance() { //*Singleton
         if(this.instance) {
             return this.instance; //ou AccountingDepartment.instance
         }

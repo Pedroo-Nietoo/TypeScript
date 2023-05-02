@@ -48,4 +48,3 @@ user1 = new Person()
 
 user1.greet('Hi, I am');
 console.log(user1)
-
